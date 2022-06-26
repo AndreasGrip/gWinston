@@ -1,15 +1,15 @@
-# gWinston
+# griffinwinston
 
 Wraps around winston to create a plug'n play logger.
 Unlike winston, it's not a pain to setup.
 
 ## TL;DR
 
-Run npm install g_winston
+Run npm install griffinwinston
 
 Add to code
 
-    const gWinston = require("./g_winston");
+    const gWinston = require("griffinwinston");
     const logger = new gWinston();
     // test examples
     logger.debug('debug');
@@ -20,7 +20,7 @@ Less will be logged to files if process.env.NODE_ENV === "production", and nothi
 
 ## Configuration
 
-    const gWinston = require("./g_winston");
+    const gWinston = require("./griffinwinston");
     const config { consoleColors: true, // Shall colors be used in console? (Default true)
     consoleJson: 'silly', // consoleJson or consoleText can be used depending on what format you want the data in.
     fileColors: true, // Shall colors be used in files? (Default false)
