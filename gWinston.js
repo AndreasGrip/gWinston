@@ -148,6 +148,14 @@ class logger {
     this.logger.add(this._fileText[this._fileText.length - 1]);
     this._fileText.push(level);
   }
+  replaceConsole() {
+    for (const [key, value] of Object.entries(this.logger.levels)) {
+      console[key] = function (...args) {
+        this.logger[key](...args);
+      };
+      if (key === "info") console.log = this[key];
+    }
+  }
 }
 
 module.exports = logger;

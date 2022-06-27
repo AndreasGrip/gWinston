@@ -20,7 +20,7 @@ Less will be logged to files if process.env.NODE_ENV === "production", and nothi
 
 ## Configuration
 
-    const gWinston = require("./griffinwinston");
+    const gWinston = require("griffinwinston");
     const config { consoleColors: true, // Shall colors be used in console? (Default true)
     consoleJson: 'silly', // consoleJson or consoleText can be used depending on what format you want the data in.
     fileColors: true, // Shall colors be used in files? (Default false)
@@ -32,3 +32,11 @@ Less will be logged to files if process.env.NODE_ENV === "production", and nothi
     logger.debug('debug');
     logger.info('info');
     logger.error('error');
+
+## Already using console.log, console.debug, console.error
+    The following will replace console.* to the one one with the same name that exists in winston.
+    Please note that this is global, so don't use this if you are building a module as it will change things for mainprogram and other modules, and that will surprise users as well as future you ;)
+
+    const gWinston = require("griffinwinston");
+    const logger = new gWinston();
+    logger.replaceConsole();
