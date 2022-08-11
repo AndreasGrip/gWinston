@@ -29,8 +29,8 @@ const rawFormat = printf(({ level, message, label, timestamp }) => {
 
 class logger {
   constructor(config = {}) {
-    this.config = config;
     if(typeof config === "string") config = {"label": config}
+    this.config = config;
     this._fileFolder = this.config.logFileFolder = this.config.logFileFolder ? this.config.logFileFolder : "logs";
     this._consoleText = [];
     if (this.config.consoleText && typeof this.config.consoleText !== "string") this._consoleText.push(...this.config.consoleText);
